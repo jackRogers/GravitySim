@@ -1,0 +1,14 @@
+Jack Rogers
+New College of Florida
+2011
+
+Gravity Simulator w/ Data Analysis
+
+N-body gravity simulator written in python
+uses tkinter for the gui and has a menubar with all actions
+can export simulation data to csv format
+can load csv's from a simulation into a sql database
+opens new window for basic analysis of simulation as well for each particle in the simulation
+
+Things to Do:
+	Write things to do 
