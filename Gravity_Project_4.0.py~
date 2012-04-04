@@ -204,20 +204,22 @@ class Particle:
 		self.yaccel = (ydiff/float(Distance) * Acceleration)
 		self.yvel -= self.yaccel * sim.Iteration_Rate
 
-	def Inelastic_Collision(self, mate):
+	def Inelastic_Collision(self, mate):	#FIX ME
 		New_Mass = self.mass + mate.mass
-		XDiff = self.x - mate.x #.x is the x coord center of the circle.
-		YDiff = self.y - mate.y #similar
-		ratio = self.mass/(New_Mass)
-		New_X = mate.x + ((XDiff)*ratio) #sets new center closest to largest mass particle
-		New_Y = mate.y + ((YDiff)*ratio) #same thing.
+		XDiff = self.x - mate.x
+		YDiff = self.y - mate.y
+		Distance = abs(math.sqrt((XDiff**2)+(YDiff**2)))
+		if self.mass >= mate.mass:
+			pass
+		else:
+			XDiff = XDiff * (-1)
+			YDiff = YDiff * (-1)
+		New_X = mate.x + (XDiff/Distance * self.radius)
+		New_Y = mate.y + (YDiff/Distance * self.radius)
 		New_Xvel = ((self.mass * self.xvel) + (mate.mass * mate.xvel)) / (self.mass + mate.mass)
 		New_Yvel = ((self.mass * self.yvel) + (mate.mass * mate.yvel)) / (self.mass + mate.mass)
 		z = Particle(New_X, New_Y, New_Xvel, New_Yvel, New_Mass)
-        return z
-
-#ratio of masses and lack of absolute values on the differences means we don't have
-#to use an if statement to find which mass is largest.
+		return z
 
 	def Detect_Collision(self,p):
 		for i in self.distance_list:
