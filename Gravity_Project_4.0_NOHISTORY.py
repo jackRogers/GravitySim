@@ -130,7 +130,7 @@ class Particle:
 		New_Xvel = ((self.mass * self.xvel) + (mate.mass * mate.xvel)) / (self.mass + mate.mass)
 		New_Yvel = ((self.mass * self.yvel) + (mate.mass * mate.yvel)) / (self.mass + mate.mass)
 		z = Particle(New_X, New_Y, New_Xvel, New_Yvel, New_Mass)
-        return z
+        	return z
 
 	def Detect_Collision(self,p):
 		for i in self.distance_list:
