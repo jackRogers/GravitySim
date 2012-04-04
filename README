@@ -3,12 +3,17 @@ New College of Florida
 2011
 
 Gravity Simulator w/ Data Analysis
+	N-body gravity simulator written in python
+	uses tkinter for the gui and has a menubar with all actions
+	cexport simulation data to csv format
+	load csv's from a simulation into a sql database
+	opens new window for basic analysis of simulation as well for each particle in the simulation
+		multiple graphs and lots of information for the simulation and each particle
 
-N-body gravity simulator written in python
-uses tkinter for the gui and has a menubar with all actions
-can export simulation data to csv format
-can load csv's from a simulation into a sql database
-opens new window for basic analysis of simulation as well for each particle in the simulation
+Bug Tracker:
+	1. When particles collide, position of new particle is not correct.  Probably a minus sign
+	 somewhere (in progrss)
+
 
 Things to Do:
-	Write things to do 
+	Fix bugs
